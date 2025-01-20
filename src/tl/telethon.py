@@ -322,7 +322,7 @@ class TelegramClient(telethon.TelegramClient, BaseObject):
                 api_hash = api.api_hash
 
                 # pass our hook id through the device_model
-                kwargs["device_model"] = api.pid  # type: ignore
+                kwargs["device_model"] = api.device_model  # type: ignore
 
             else:
                 if (
@@ -340,7 +340,7 @@ class TelegramClient(telethon.TelegramClient, BaseObject):
             api_hash = api.api_hash
 
             # pass our hook id through the device_model
-            kwargs["device_model"] = api.pid  # type: ignore
+            kwargs["device_model"] = api.device_model  # type: ignore
 
         self._user_id = None
         super().__init__(session, api_id, api_hash, **kwargs)
